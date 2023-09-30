@@ -1,0 +1,48 @@
+
+Family: Multivariate normal 
+Link function: 
+
+Formula:
+X1 ~ -1 + week + people_fully_vaccinated + driving + walking + 
+    transit + hosp + policy
+X2 ~ -1 + week + people_fully_vaccinated + driving + walking + 
+    transit + hosp + policy
+X3 ~ -1 + week + people_fully_vaccinated + driving + walking + 
+    transit + hosp + policy
+
+Parametric coefficients:
+                            Estimate Std. Error z value Pr(>|z|)    
+week                      -1.063e-02  2.477e-03  -4.289 1.79e-05 ***
+people_fully_vaccinated    4.758e-09  8.651e-10   5.500 3.79e-08 ***
+driving                   -1.730e-04  1.252e-04  -1.381 0.167176    
+walking                    1.383e-04  1.214e-04   1.139 0.254799    
+transit                    0.000e+00  0.000e+00     NaN      NaN    
+hosp                      -2.969e-06  4.315e-07  -6.880 5.98e-12 ***
+policy1                   -1.688e-01  1.882e-02  -8.966  < 2e-16 ***
+policy2                   -1.773e-01  1.566e-02 -11.320  < 2e-16 ***
+policy3                   -1.385e-01  2.189e-02  -6.326 2.51e-10 ***
+week.1                    -1.102e-03  3.139e-04  -3.511 0.000446 ***
+people_fully_vaccinated.1  6.260e-10  1.096e-10   5.712 1.12e-08 ***
+driving.1                 -2.572e-05  1.587e-05  -1.621 0.104969    
+walking.1                  6.545e-06  1.538e-05   0.426 0.670463    
+transit.1                  0.000e+00  0.000e+00     NaN      NaN    
+hosp.1                    -2.993e-07  5.466e-08  -5.475 4.37e-08 ***
+policy1.1                 -1.905e-02  2.384e-03  -7.991 1.34e-15 ***
+policy2.1                 -1.963e-02  1.984e-03  -9.892  < 2e-16 ***
+policy3.1                 -1.611e-02  2.773e-03  -5.809 6.29e-09 ***
+week.2                    -1.733e-02  4.118e-03  -4.208 2.58e-05 ***
+people_fully_vaccinated.2  8.210e-09  1.438e-09   5.710 1.13e-08 ***
+driving.2                 -3.085e-04  2.081e-04  -1.482 0.138258    
+walking.2                  1.989e-04  2.018e-04   0.986 0.324320    
+transit.2                  0.000e+00  0.000e+00     NaN      NaN    
+hosp.2                    -4.811e-06  7.171e-07  -6.709 1.96e-11 ***
+policy1.2                 -2.805e-01  3.128e-02  -8.966  < 2e-16 ***
+policy2.2                 -2.933e-01  2.603e-02 -11.268  < 2e-16 ***
+policy3.2                 -2.318e-01  3.638e-02  -6.370 1.89e-10 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+Rank: 30/33
+Deviance explained = 94.9%
+-REML = -359.76  Scale est. = 1         n = 31

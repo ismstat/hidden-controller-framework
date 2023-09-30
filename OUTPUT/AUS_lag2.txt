@@ -1,0 +1,44 @@
+
+Family: Multivariate normal 
+Link function: 
+
+Formula:
+X1 ~ -1 + week + people_fully_vaccinated + driving + walking + 
+    transit + hosp + policy
+X2 ~ -1 + week + people_fully_vaccinated + driving + walking + 
+    transit + hosp + policy
+X3 ~ -1 + week + people_fully_vaccinated + driving + walking + 
+    transit + hosp + policy
+
+Parametric coefficients:
+                            Estimate Std. Error z value Pr(>|z|)    
+week                      -3.760e-03  2.474e-03  -1.520 0.128519    
+people_fully_vaccinated    3.733e-10  5.622e-10   0.664 0.506619    
+driving                    4.519e-04  2.603e-04   1.737 0.082471 .  
+walking                   -2.544e-04  1.861e-04  -1.367 0.171680    
+transit                   -2.367e-04  2.121e-04  -1.116 0.264432    
+hosp                      -3.970e-05  2.518e-06 -15.763  < 2e-16 ***
+policy1                   -1.500e-03  1.508e-02  -0.099 0.920799    
+policy2                    1.812e-03  2.026e-02   0.089 0.928732    
+week.1                     1.863e-04  6.344e-04   0.294 0.769022    
+people_fully_vaccinated.1 -4.775e-10  1.442e-10  -3.312 0.000926 ***
+driving.1                  1.839e-05  6.674e-05   0.275 0.782933    
+walking.1                  6.131e-05  4.773e-05   1.284 0.198986    
+transit.1                 -1.131e-04  5.438e-05  -2.080 0.037508 *  
+hosp.1                    -3.381e-06  6.458e-07  -5.236 1.64e-07 ***
+policy1.1                  2.824e-03  3.868e-03   0.730 0.465296    
+policy2.1                  6.824e-03  5.195e-03   1.314 0.188984    
+week.2                    -2.452e-03  3.814e-03  -0.643 0.520375    
+people_fully_vaccinated.2 -1.452e-09  8.667e-10  -1.676 0.093772 .  
+driving.2                  4.477e-04  4.012e-04   1.116 0.264471    
+walking.2                 -1.349e-05  2.869e-04  -0.047 0.962515    
+transit.2                 -5.783e-04  3.269e-04  -1.769 0.076913 .  
+hosp.2                    -4.603e-05  3.882e-06 -11.855  < 2e-16 ***
+policy1.2                  7.919e-03  2.325e-02   0.341 0.733421    
+policy2.2                  2.334e-02  3.123e-02   0.747 0.454885    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+Deviance explained = 98.4%
+-REML = -234.02  Scale est. = 1         n = 31
