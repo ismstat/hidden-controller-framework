@@ -25,13 +25,6 @@ for country = 1:9
     options.MaxFunctionEvaluations = 1.000000e+04;
     options.MaxIterations = 1e+04;
     %%%%%%%%%%%%%%%%%%%%
-    % parameters for iidtester
-    %%%%%%%%%%%%%%%%%%%%
-    epsilon = 0.5;
-    C = 10;
-    IT = 10;
-    epsilon_dist = 1e-3;
-    %%%%%%%%%%%%%%%%%%%%
     % Read data
     %%%%%%%%%%%%%%%%%%%%
     [MO, nsteps, npref, n, m] = readdata_pop_country([cname, '.csv']);
