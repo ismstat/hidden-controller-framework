@@ -10,17 +10,21 @@ Therefore, this GitHub repository includes only the second dataset (ii), along w
 
 HiddenControllerFramework_for_data_ii.m (Matlab):
   Estimate the parameters of A, B, Q, and R in our hidden controller framework.
+  
   INPUT: data from nine countries: 
     AUS.csv		CHL.csv		CZE.csv		JPN.csv		ZAF.csv
-    BRA.csv		COL.csv		DEU.csv		LTU.csv    
+    BRA.csv		COL.csv		DEU.csv		LTU.csv   
+    
   OUTPUT: 
     parameters of A, B, Q, and R
 
 Heatmap_for_data_ii.r (R):
   Generate a heatmap illustrating the z-scores derived from Generalized Additive Models ("mgcv" package) for predictor covariates. 
   These covariates should be associated with the number of individuals who are infected, deceased, and recovered across the nine countries under study.
+  
   INPUT: 
     output_interior-point_original_i1_d1_{AUS, BRA, CHL, COL, CZE, DEU, JPN, LTU, ZAF}/*.csv
+    
   OUTPUT:
     heatmap (Figure 8) and dendrogram (Figure 9)
     
