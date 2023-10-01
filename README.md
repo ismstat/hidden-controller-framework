@@ -1,7 +1,6 @@
 # hidden-controller-framework
 Codes and data for the paper "Data-Driven Framework for Uncovering Hidden Control Strategies in Evolutionary Analysis"
 
-## Notes: 
 In the paper, two sets of observed COVID-19 data were utilized:
   ```
   (i) Data from five prefectures in Japan, provided by JX PRESS Corporation, and
@@ -20,6 +19,8 @@ Therefore, this GitHub repository includes only the second dataset (ii), along w
   OUTPUT: 
     parameters of A, B, Q, and R
   ```
+### Notes:
+  The parameters in this repository were calculated using Matlab R2019a on a Mac Pro (28-Core Intel Xeon W). The estimated values may vary slightly depending on the machine used.
 
 ## **Heatmap_for_data_ii.r** (R):
   Generate a heatmap illustrating the z-scores derived from Generalized Additive Models ("mgcv" package) for predictor covariates. 
