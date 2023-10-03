@@ -18,6 +18,8 @@ Therefore, this GitHub repository includes only the second dataset (ii), along w
     BRA.csv		COL.csv		DEU.csv		LTU.csv   
   OUTPUT: 
     parameters of A, B, Q, and R
+  RUN:
+    Matlab> HiddenControllerFramework_for_data_ii
   ```
 ### Notes:
   The parameters in this repository were calculated using Matlab R2019a on a Mac Pro (28-Core Intel Xeon W). The estimated values may vary slightly depending on the machine used.
@@ -30,6 +32,8 @@ Therefore, this GitHub repository includes only the second dataset (ii), along w
     output_interior-point_original_i1_d1_{AUS, BRA, CHL, COL, CZE, DEU, JPN, LTU, ZAF}/*.csv  
   OUTPUT:
     heatmap (Figure 8) and dendrogram (Figure 9)
+  RUN:
+    R> Heatmap_for_data_ii
   ```
     
   
