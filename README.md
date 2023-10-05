@@ -16,7 +16,7 @@ Therefore, this GitHub repository includes only the second dataset (ii), along w
   INPUT: data from nine countries: 
     AUS.csv		CHL.csv		CZE.csv		JPN.csv		ZAF.csv
     BRA.csv		COL.csv		DEU.csv		LTU.csv
-    (Run R> code/readdata_countries to generate the above data.) 
+    (Run R> code/readdata_countries in advance to generate the above data.) 
   OUTPUT: 
     parameters of A, B, Q, and R
   RUN:
