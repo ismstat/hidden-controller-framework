@@ -11,14 +11,8 @@ lag = 2
 for (country in c("AUS", "BRA", "CHL", "COL", "CZE", "DEU", "JPN", "LTU", "ZAF")) {
     odir <- paste0("../output_interior-point_original_i1_d1_", country, sep = "")
     
-    testall_recreate_vacc <- 0
-    testall_recreate_walk <- 0
-    Y2020 <- 0
-
     pref <- 1
     pname <- country
-
-    nperiod <- 0
     
     sday <- as.Date("2021/4/1")
     eday <- as.Date("2021/11/10")
@@ -42,16 +36,12 @@ for (country in c("AUS", "BRA", "CHL", "COL", "CZE", "DEU", "JPN", "LTU", "ZAF")
     Y <- A %*% M[1:3, 1:nstep] + X
     YO <- MO[1:3, 2:(nstep + 1)]
 
-    # For stable estimation
-    M_ORG <- M
-    MO_ORG <- MO
-
     x <- covid19(country, level = 1, verbose = FALSE, amr = "../applemobilitytrends-2022-02-07.csv", start = "2021-03-31", end = "2021-11-22")
     xjpn <- covid19("JPN", level = 1, verbose = FALSE, amr = "../applemobilitytrends-2022-02-07.csv", start = "2021-03-31", end = "2021-11-22")
     
     nweek <- floor((as.numeric(eday - sday) + 1) / 7)
     nstep <- nweek - 1
-    vnum <- 6 # week, people_fully_vaccinated, driving, walking, transit, hosp
+    vnum <- 6 # covariates: week, people_fully_vaccinated, driving, walking, transit, hosp
     vnum <- vnum + 1
 
     xp1 <- x[, 27:30]
@@ -117,24 +107,17 @@ for (country in c("AUS", "BRA", "CHL", "COL", "CZE", "DEU", "JPN", "LTU", "ZAF")
 z <- rbind(AUS, BRA, CHL, COL, CZE, DEU, JPN, LTU, ZAF)
 saveRDS(z, paste0("../", OUTPUT_DIR, "/z_lag", as.character(lag), ".obj"))
 
-## 3D map
+## dendrogram (Figure 9)
 z <- readRDS(paste0("../", OUTPUT_DIR, "/z_lag", as.character(lag), ".obj"))
-resz <- PCA(z, ncp = 5)
-test <- HCPC(resz, nb.clust = -1)
+resz <- PCA(z, ncp = 5, graph = FALSE)
+test <- HCPC(resz, nb.clust = -1, graph = FALSE)
 pdf(file = "./figure9.pdf")
-plot(test, choice = "3D.map") # cex=1, cex.lab=1.5, cex.axis=1.2, cex.main=1.2
+plot(test, choice = "3D.map")
 dev.off()
 
-## hclust-based visualization
+## heatmap (Figure 8)
 z <- as.data.frame(readRDS(paste0("../", OUTPUT_DIR, "/z_lag", as.character(lag), ".obj")))[, 1:27]
 z_sc <- as.matrix((scale(z)))
-dist <- dist(t(z_sc)) # Evaluation of distance
-res_h <- hclust(dist)
-res_h <- hclust(dist, "average")
-plot(res_h)
-plot(res_h$height) # we can stop at 4 clusters according to the curve.
-
-## dendrogram
 pdf(file = "./figure8.pdf")
 thres  = qt((0.05/2), df=25)   # 31 - number of variables(6) - number of intercepts (0)
 min_z_sc = min(z_sc)

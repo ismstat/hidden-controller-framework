@@ -5,11 +5,12 @@
 %%%%%%%%%%%%%%%%%%%%
 addpath('code');
 rng(123);
-countrynames = ['AUS'; 'COL'; 'DEU'; 'JPN';'BRA'; 'CHL'; 'CZE'; 'LTU'; 'ZAF']
+countrynames = ['AUS'; 'COL'; 'DEU'; 'JPN';'BRA'; 'CHL'; 'CZE'; 'LTU'; 'ZAF'];
 for country = 1:9
     cname = countrynames(country,:);
     %%%%%%%%%%%%%%%%%%%%
-    % parameters for fmincon
+    % Parameters for Matlab fmincon
+    % Find minimum of constrained nonlinear multivariable function
     %%%%%%%%%%%%%%%%%%%%
     scaleY = 1;
     scaleD = 1;
@@ -43,13 +44,14 @@ for country = 1:9
     % Output
     %%%%%%%%%%%%%%%%%%%%
     logID = 1;
-    odir = append('output', '_', options.Algorithm, '_', xtype, '_i', num2str(xinfected), '_d', num2str(xdead),'_', cname); %, '_sd', num2str(scaleDead));
+    odir = append('output', '_', options.Algorithm, '_', xtype, '_i', num2str(xinfected), '_d', num2str(xdead),'_', cname); 
     [status, msg, msgID] = mkdir(odir);
     %%%%%%%%%%%%%%%%%%%
     % Target data
     %%%%%%%%%%%%%%%%%%%
     M = target_x(MO, nsteps, npref, n, xtype, xinfected, xrecovered, xdead, odir);
     %%%%%%%%%%%%%%%%%%%%
+    % fast_mpc: code for fast model predictive control
     % https://stanford.edu/~boyd/fast_mpc/
     %%%%%%%%%%%%%%%%%%%%
     % x(t+1) = A x(t) + B u(t) + G w(t)
@@ -110,8 +112,6 @@ for country = 1:9
             csvwrite(Qname, yoptimal(end-1));
             Rname = append(odir, '/R', int2str(it), '_', int2str(np), '.csv');
             csvwrite(Rname, yoptimal(end));
-            xname = append(odir, '/x', int2str(it), '_', int2str(np), '.csv');
-            csvwrite(xname, x);
         end
     end
 end
